@@ -20,7 +20,7 @@ function find_missing_letter_in($given_letters){
 }
 // $given_letters = "abcdeghi";
 // $given_letters = "defgi dkl";
-$given_letters = "xyz";
+$given_letters    = "xyz";
 print(find_missing_letter_in($given_letters));
 ?>
 </body>

@@ -21,12 +21,11 @@
                 $three_num++;
                 if ($three_num % 3 == 0) {
                     array_push($new_array, $array[$i]);
-                    if($three_num < 6)
+                    if ($three_num < 6)
                         array_push($new_array, "_");
                     else
                         array_push($new_array, ",");
-                }
-                else
+                } else
                     array_push($new_array, $array[$i]);
             }
         }

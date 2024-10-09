@@ -13,8 +13,8 @@
     {
         $array_words = explode(" ", $given_words);
         $long_word = "";
-        for($i=0; $i<count($array_words); $i++){
-            if(strlen($array_words[$i]) > strlen($long_word)){
+        for ($i = 0; $i < count($array_words); $i++) {
+            if (strlen($array_words[$i]) > strlen($long_word)) {
                 $long_word = $array_words[$i];
             }
         }

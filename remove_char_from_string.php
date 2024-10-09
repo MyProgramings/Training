@@ -13,8 +13,8 @@
     {
         $array_letters = str_split($given_words);
         $new_array = [];
-        for($i=0; $i<count($array_letters); $i++){
-            if($array_letters[$i] != strtolower($letter) && $array_letters[$i] != strtoupper($letter)){
+        for ($i = 0; $i < count($array_letters); $i++) {
+            if ($array_letters[$i] != strtolower($letter) && $array_letters[$i] != strtoupper($letter)) {
                 array_push($new_array, $array_letters[$i]);
             }
         }

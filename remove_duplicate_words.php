@@ -14,14 +14,14 @@
         $array_words = explode(" ", $sentence);
         $exit = false;
         $new_array = [];
-        for($i=0; $i<count($array_words); $i++){
-            for($j=0; $j<$i; $j++){
-                if($array_words[$i] == $array_words[$j]){
+        for ($i = 0; $i < count($array_words); $i++) {
+            for ($j = 0; $j < $i; $j++) {
+                if ($array_words[$i] == $array_words[$j]) {
                     $exit = true;
                     break;
                 }
             }
-            if($exit != true){
+            if ($exit != true) {
                 array_push($new_array, $array_words[$i]);
             }
             $exit = false;

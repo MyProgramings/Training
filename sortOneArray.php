@@ -1,24 +1,43 @@
 <?php
-function sortArray($l1) {
-    $i=0; $k=0;
-    $size1 = count($l1);
-    while($i<$size1){
-        for ($j=$i + 1; $j < $size1; $j++) { 
-            if ($l1[$i] > $l1[$j]) {
-                $swap = $l1[$j];
-                print($j . " " . $swap);
-                echo ("\n");
-                $l1[$j] = $l1[$i];
+function sortArray($array) {
+    $length = count($array);
+    for ($i = 0; $i < $length - 1; $i++) {
+        $minIndex = $i;
+        for ($j = $i + 1; $j < $length; $j++) { 
+            if ($array[$j] < $array[$minIndex]) {
+                $minIndex = $j;
             }
         }
-        $l1[$i] = $swap;
-        $i++;
+        if ($minIndex != $i) {
+            $temp = $array[$i];
+            $array[$i] = $array[$minIndex];
+            $array[$minIndex] = $temp;
+        }
     }
-
-    return $l1;
+    return $array;
 }
-$l1 = [3, 5, 2, 1, 7, 9, 22, 4, 88, 0, 199];
-echo ("<pre>");
-print_r(sortArray($l1));
-echo ("<pre>");
+$originalArray = [3, 5, 2, 1, 7, 9, 22, 4, 88, 77, 89, 99, 100];
+// Sort the array
+$sortedArray = sortArray($originalArray);
+
+// Display results professionally
+echo "<pre>";
+echo "================================\n";
+echo "        ARRAY SORTING RESULT     \n";
+echo "================================\n\n";
+
+echo "Original Array:\n";
+echo "-------------------------------\n";
+print_r($originalArray);
+
+echo "\nSorted Array (Ascending Order):\n";
+echo "-------------------------------\n";
+print_r($sortedArray);
+
+echo "\nExecution Summary:\n";
+echo "-------------------------------\n";
+echo "- Total Elements: " . count($originalArray) . "\n";
+echo "- Sorting Algorithm: Selection Sort\n";
+echo "- Time Complexity: O(n²)\n";
+echo "</pre>";
 ?>

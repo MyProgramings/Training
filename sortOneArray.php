@@ -17,10 +17,8 @@ function sortArray($array) {
     return $array;
 }
 $originalArray = [3, 5, 2, 1, 7, 9, 22, 4, 88, 77, 89, 99, 100];
-// Sort the array
 $sortedArray = sortArray($originalArray);
 
-// Display results professionally
 echo "<pre>";
 echo "================================\n";
 echo "        ARRAY SORTING RESULT     \n";

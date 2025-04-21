@@ -12,7 +12,7 @@ function merge(&$arr, $arr1B, $arr1E, $arr2B, $arr2E){
     $j = $arr2B;
     $temp = [];
     while ($i <= $arr1E && $j <= $arr2E) {
-        if ($arr[$i] < $arr[$j]) {
+        if (($arr[$i] . $arr[$j]) > ($arr[$j] . $arr[$i])) {
             $temp[] = $arr[$i++];
         } else {
             $temp[] = $arr[$j++];
@@ -39,13 +39,13 @@ echo "================================\n\n";
 
 echo "Original Array:\n";
 echo "-------------------------------\n";
-print_r($originalArray);
+echo "\nOriginal Array: [" . implode(', ', $originalArray) . "]\n";
 
 mergeSort($originalArray, 0, count($originalArray) - 1);
 
 echo "\nSorted Array (Ascending Order):\n";
 echo "-------------------------------\n";
-print_r($originalArray);
+echo "\nLargest number: " . implode('', $originalArray) . "\n";
 
 echo "\nExecution Summary:\n";
 echo "-------------------------------\n";

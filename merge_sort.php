@@ -1,13 +1,15 @@
 <?php
-function mergeSort(&$arr, $start, $end) {
+function mergeSort(&$arr, $start, $end)
+{
     if ($start < $end) {
         $mid = (int)(($start + $end) / 2);
         mergeSort($arr, $start, $mid);
-        mergeSort($arr, $mid +1, $end);
-        merge($arr, $start, $mid, $mid +1, $end);
+        mergeSort($arr, $mid + 1, $end);
+        merge($arr, $start, $mid, $mid + 1, $end);
     }
 }
-function merge(&$arr, $arr1B, $arr1E, $arr2B, $arr2E){
+function merge(&$arr, $arr1B, $arr1E, $arr2B, $arr2E)
+{
     $i = $arr1B;
     $j = $arr2B;
     $temp = [];
@@ -18,14 +20,14 @@ function merge(&$arr, $arr1B, $arr1E, $arr2B, $arr2E){
             $temp[] = $arr[$j++];
         }
     }
-    while($i<=$arr1E)
+    while ($i <= $arr1E)
         $temp[] = $arr[$i++];
 
-    while($j<=$arr2E)
+    while ($j <= $arr2E)
         $temp[] = $arr[$j++];
 
     $k = $arr1B;
-    foreach ($temp as $value) { 
+    foreach ($temp as $value) {
         $arr[$k++] = $value;
     }
 }
@@ -54,4 +56,3 @@ echo "- Sorting Algorithm: Merge Sort\n";
 echo "- Time Complexity: O(n log n)\n";
 echo "- Space Complexity: O(n)\n";
 echo "</pre>";
-?>

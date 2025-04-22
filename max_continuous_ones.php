@@ -1,5 +1,6 @@
 <?php
-function maxOnesIndices(array $A, int $B): array {
+function maxOnesIndices(array $A, int $B): array
+{
     $left = 0;
     $right = 0;
     $zeroCount = 0;
@@ -43,5 +44,3 @@ function maxOnesIndices(array $A, int $B): array {
 echo "\nOriginal Array: [" . implode(', ', maxOnesIndices([1, 0, 1, 0, 0, 1, 1], 2)) . "]\n";
 echo "-------------------------------\n";
 echo "\nOriginal Array: [" . implode(', ', maxOnesIndices([1, 1, 0, 1, 0, 1, 1], 1)) . "]\n";
-
-?>

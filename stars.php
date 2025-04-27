@@ -1,47 +1,39 @@
 <?php
 function stars($n)
 {
-    echo ("<pre>");
+    echo "<pre>";
+
+    // Top part (upper X)
     for ($i = 0; $i < $n; $i++) {
-        for ($j = 0; $j < $n; $j++) {
-            if ($i + $j == $n - 1 && $i + $j == $n - 1 && $i != 0) {
-                print('*');
+        for ($j = 0; $j < $n * 2 - 1; $j++) {
+            if ($j == $n - 1 - $i || $j == $n - 1 + $i) {
+                echo "*";
             } else {
-                print(" ");
+                echo " ";
             }
         }
-        for ($j = 0; $j < $i + 1; $j++) {
-            if ($i == $j) {
-                print('*');
-            } else {
-                print(" ");
-            }
-        }
-        echo ("<pre>");
+        echo "\n";
     }
 
-    for ($j = 0; $j < $n * 2 - 1; $j++) {
-        print('*');
+    // Middle line
+    for ($i = 0; $i < $n * 2 - 1; $i++) {
+        echo "*";
     }
-    echo ("<pre>");
+    echo "\n";
 
-    for ($i = 0; $i < $n; $i++) {
-        for ($j = 0; $j < $n; $j++) {
-            if ($i == $j && $i != $n - 1) {
-                print('*');
+    // Bottom part (lower X)
+    for ($i = $n - 1; $i >= 0; $i--) {
+        for ($j = 0; $j < $n * 2 - 1; $j++) {
+            if ($j == $n - 1 - $i || $j == $n - 1 + $i) {
+                echo "*";
             } else {
-                print(" ");
+                echo " ";
             }
         }
-        for ($j = 0; $j < $n - $i; $j++) {
-            if ($i + $j == $n - 1 && $i + $j == $n - 1) {
-                print('*');
-            } else {
-                print(" ");
-            }
-        }
-        echo ("<pre>");
+        echo "\n";
     }
+
+    echo "</pre>";
 }
 
 echo stars(10);

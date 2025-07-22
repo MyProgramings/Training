@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<button id="whatsappButton">إرسال الطلب عبر واتساب</button>
+
+<script>
+var cartItems = [
+  { name: 'جوال اس 22 الترا', quantity: 2, price: 905 },
+  { name: 'سماعات بلوتوث m9', quantity: 3, price: 100 },
+  { name: 'ساعة يد', quantity: 2, price: 50 },
+  { name: 'شاحن سريع', quantity: 1, price: 20 },
+  { name: 'جراب جوال', quantity: 1, price: 15 },
+  { name: 'كابل شحن', quantity: 2, price: 10 }
+];
+
+document.getElementById('whatsappButton').addEventListener('click', () => {
+  let message = `*مرحبا، هذا طلب جديد*:\n\n`; // عنوان بارز
+  let total = 0;
+
+  cartItems.forEach(item => {
+    message += `- *${item.name}* × _${item.quantity}_ (السعر: ~${item.price}~ ريال)\n`;
+    total += item.price * item.quantity;
+  });
+
+  message += `\n*المجموع:* *${total}* ريال\n`;
+  message += "_شكراً لتسوقكم معنا!_";
+
+  const whatsappNumber = "967779941156";
+  const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+  window.open(whatsappURL);
+});
+</script>
+
+
+</body>
+</html>

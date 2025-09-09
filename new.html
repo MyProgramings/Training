@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <title>عرض فيديو YouTube</title>
+  <style>
+    .video-container {
+      position: relative;
+      width: 100%;
+      max-width: 560px;
+      margin: auto;
+      padding-bottom: 56.25%; /* نسبة عرض إلى ارتفاع 16:9 */
+      height: 0;
+    }
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div class="video-container">
+    <iframe
+      src="https://www.youtube.com/embed/VIDEO_ID"
+      frameborder="0"
+      allow="autoplay; encrypted-media"
+      allowfullscreen
+    ></iframe>
+  </div>
+</body>
+</html>

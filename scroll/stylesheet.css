@@ -1,0 +1,116 @@
+.nav-link:hover {
+    background-color: #055061;
+}
+
+/* الكتلة الرئيسية */
+.pkp_block {
+    margin-bottom: 1.5rem;
+    border-radius: 0.5rem;
+    background-color: #f8f9fa;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-family: 'Noto Kufi Arabic', sans-serif;
+}
+
+/* العنوان */
+.pkp_block .title {
+    font-weight: 600;
+    color: #077389;
+    margin-bottom: 0.75rem;
+    border-bottom: 2px solid #077389;
+    padding-bottom: 0.5rem;
+    font-family: 'Noto Kufi Arabic', sans-serif;
+}
+
+/* قائمة المحتوى */
+.pkp_block .content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+/* العناصر الفردية */
+.pkp_block .content ul li {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* الروابط */
+.pkp_block .content ul li a {
+    display: block;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 0.25rem;
+    color: #077389;
+    transition: all 0.3s ease;
+    border: 1px solid #ddd;
+}
+
+/* الحالة النشطة */
+.pkp_block .content ul li.current a {
+    background-color: #077389;
+    color: #fff;
+    font-weight: 600;
+    border-color: #077389;
+}
+
+/* التفاعل عند التمرير */
+.pkp_block .content ul li a:hover {
+    background-color: #065d71;
+    color: #fff;
+    border-color: #065d71;
+}
+
+/* الأزرار */
+.pkp_block .block_make_submission a {
+    display: inline-block;
+    background-color: #077389;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    text-align: center;
+    border-radius: 0.25rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    margin-top: 1rem;
+}
+
+/* الأزرار عند التمرير عليها */
+.pkp_block .block_make_submission a:hover {
+    background-color: #065d71;
+}
+
+/* إضافة صورة داخل المحتوى */
+.pkp_block .content img {
+    width: 100%;
+    height: auto;
+    border-radius: 0.25rem;
+    margin-top: 1rem;
+}
+
+.pkp_structure_sidebar.left > .pkp_block {
+    margin-inline-start: 1.5rem;
+}
+
+/* استجابة الهواتف */
+@media (max-width: 768px) {
+    .pkp_block {
+        padding: 0.75rem;
+    }
+    .pkp_block .title {
+        font-size: 1rem;
+    }
+    .pkp_block .content ul li a {
+        padding: 0.5rem;
+    }
+    .pkp_block .block_make_submission a {
+        padding: 0.5rem 1rem;
+        font-size: 0.875rem;
+    }
+    .pkp_structure_sidebar.left > .pkp_block {
+        margin-inline-start: 0;
+    }
+}
